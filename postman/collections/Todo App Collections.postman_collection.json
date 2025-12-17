@@ -1,0 +1,697 @@
+{
+  "info": {
+    "_postman_id": "35edafb6-55e9-4e0c-8cd4-112b38545eff",
+    "name": "Todo App Collections",
+    "description": "Postman collection to test the Node/Express Todo backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "id": "4427fa1c-0a0c-423d-b792-18904449efb0",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "2fe183e6-5ba6-46f9-a5cf-b3334a64c8c5",
+          "name": "Health Check Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "health"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "name": "Content-Type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "54"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"36-LEyESFpeNb2fSxybQQt1H4/PeMg\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:42:36 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"ok\",\n    \"timestamp\": \"2025-12-17T05:42:36.951Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Todo",
+      "id": "0dcb1b99-7187-4b7f-92d5-b5e788eb041a",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Buy bread\",\n  \"description\": \"2Packets\",\n  \"dueAt\": \"2025-12-19T18:00:00.000Z\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/todos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "todos"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "3ebdba8d-f181-4392-aadb-738d77c2308f",
+          "name": "Create Todo Success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Buy milk\",\n  \"description\": \"2L skimmed\",\n  \"dueAt\": \"2025-12-18T18:00:00.000Z\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/todos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "todos"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "name": "Content-Type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "180"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b4-1kcB/iivDg+v8FQFywjszWAAdEw\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:42:57 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"title\": \"Buy milk\",\n    \"description\": \"2L skimmed\",\n    \"dueAt\": \"2025-12-18T18:00:00.000Z\",\n    \"done\": false,\n    \"createdAt\": \"2025-12-17T05:42:57.019Z\",\n    \"updatedAt\": \"2025-12-17T05:42:57.019Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get All Todos",
+      "id": "9ecc8ef4-0560-4156-b727-27fa1302875d",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/todos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "todos"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "c23af548-684c-4773-bb95-6e5475153dcd",
+          "name": "Get All Todos Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/todos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "todos"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "name": "Content-Type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "182"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b6-q4nDNYk15ERUCo4U5KckodPNAfs\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:43:17 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Buy milk\",\n        \"description\": \"2L skimmed\",\n        \"dueAt\": \"2025-12-18T18:00:00.000Z\",\n        \"done\": false,\n        \"createdAt\": \"2025-12-17T05:42:57.019Z\",\n        \"updatedAt\": \"2025-12-17T05:42:57.019Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get Todo by ID",
+      "id": "561f7210-a92b-4b6e-a260-c6c2d1614f81",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/todos/{{todoId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "todos",
+            "{{todoId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "0962ff19-6b9d-4738-a13d-a7cee2387621",
+          "name": "Get Todo by ID Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/todos/{{todoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "todos",
+                "{{todoId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "name": "Content-Type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "180"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b4-1kcB/iivDg+v8FQFywjszWAAdEw\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:43:44 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"title\": \"Buy milk\",\n    \"description\": \"2L skimmed\",\n    \"dueAt\": \"2025-12-18T18:00:00.000Z\",\n    \"done\": false,\n    \"createdAt\": \"2025-12-17T05:42:57.019Z\",\n    \"updatedAt\": \"2025-12-17T05:42:57.019Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update Todo",
+      "id": "ab7dee93-729c-40c2-bcc9-5d87f2611013",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Buy milk and bread\",\n  \"description\": \"2L skimmed, whole-grain bread\",\n  \"dueAt\": \"2025-12-18T19:00:00.000Z\",\n  \"done\": false\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/todos/{{todoId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "todos",
+            "{{todoId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "b6f51993-da89-4fdb-b252-e3d742bcaf71",
+          "name": "Update Todo Success",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Buy milk and bread\",\n  \"description\": \"2L skimmed, whole-grain bread\",\n  \"dueAt\": \"2025-12-18T19:00:00.000Z\",\n  \"done\": false\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/todos/{{todoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "todos",
+                "{{todoId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "name": "Content-Type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "209"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"d1-s5h/9cFKI/bPkPPK0WJu7PRPI8w\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:44:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 1,\n    \"title\": \"Buy milk and bread\",\n    \"description\": \"2L skimmed, whole-grain bread\",\n    \"dueAt\": \"2025-12-18T19:00:00.000Z\",\n    \"done\": false,\n    \"createdAt\": \"2025-12-17T05:42:57.019Z\",\n    \"updatedAt\": \"2025-12-17T05:44:25.893Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Mark Todo as Done",
+      "id": "09be02df-117d-4d30-a345-fb56c836f330",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/todos/{{todoId}}/done",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "todos",
+            "{{todoId}}",
+            "done"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "83b23af8-aab1-4b53-9c09-a598b535edbd",
+          "name": "Mark Todo as Done Success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/todos/{{todoId}}/done",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "todos",
+                "{{todoId}}",
+                "done"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "name": "Content-Type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "179"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b3-LWWg66gj3B6zH86xETZJ5B/e+0Q\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:46:09 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"title\": \"Buy milk\",\n    \"description\": \"2L skimmed\",\n    \"dueAt\": \"2025-12-18T18:00:00.000Z\",\n    \"done\": true,\n    \"createdAt\": \"2025-12-17T05:45:32.493Z\",\n    \"updatedAt\": \"2025-12-17T05:46:09.029Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Remaining Todos",
+      "id": "0a900fa8-03b5-4516-aca9-43062d84308f",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/todos-remaining",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "todos-remaining"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "ccf4a962-d974-402d-9815-4e3286154b8d",
+          "name": "Get Remaining Todos Success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/todos-remaining",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "todos-remaining"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "name": "Content-Type",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "181"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"b5-Mbeujwic+XoKOz6C8Pk40NgmqKE\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:46:29 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 3,\n        \"title\": \"Buy bread\",\n        \"description\": \"2Packets\",\n        \"dueAt\": \"2025-12-19T18:00:00.000Z\",\n        \"done\": false,\n        \"createdAt\": \"2025-12-17T05:45:55.314Z\",\n        \"updatedAt\": \"2025-12-17T05:45:55.314Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Delete Todo",
+      "id": "62029c3d-9fec-4560-be46-1aad22051e96",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/todos/{{todoId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "todos",
+            "{{todoId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "466659b4-e424-4a0e-bf54-b50fb22af50a",
+          "name": "Delete Todo Success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/todos/{{todoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "todos",
+                "{{todoId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "Content-Length",
+              "value": "209"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"d1-s5h/9cFKI/bPkPPK0WJu7PRPI8w\""
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 17 Dec 2025 05:44:41 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"id\": 1,\n    \"title\": \"Buy milk and bread\",\n    \"description\": \"2L skimmed, whole-grain bread\",\n    \"dueAt\": \"2025-12-18T19:00:00.000Z\",\n    \"done\": false,\n    \"createdAt\": \"2025-12-17T05:42:57.019Z\",\n    \"updatedAt\": \"2025-12-17T05:44:25.893Z\"\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "id": "4e10a6a8-29e5-46ad-84ee-a58a556696a3",
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "id": "d811e833-bb9c-4120-8af8-dec7bde7eb87",
+      "key": "todoId",
+      "value": "1"
+    }
+  ]
+}

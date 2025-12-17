@@ -1,0 +1,526 @@
+openapi: 3.0.0
+info:
+  title: Todo App Collections
+  version: 1.0.0
+  description: Postman collection to test the Node/Express Todo backend.
+servers:
+  - url: http://localhost:3000
+paths:
+  /health:
+    get:
+      summary: Health Check
+      responses:
+        '200':
+          description: Health Check Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '54'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"36-LEyESFpeNb2fSxybQQt1H4/PeMg"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:42:36 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  timestamp:
+                    type: string
+                    format: date-time
+              example:
+                status: ok
+                timestamp: '2025-12-17T05:42:36.951Z'
+  /todos:
+    post:
+      summary: Create Todo
+      responses:
+        '201':
+          description: Create Todo Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '180'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"b4-1kcB/iivDg+v8FQFywjszWAAdEw"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:42:57 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  dueAt:
+                    type: string
+                    format: date-time
+                  done:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    format: date-time
+                  updatedAt:
+                    type: string
+                    format: date-time
+              example:
+                id: 1
+                title: Buy milk
+                description: 2L skimmed
+                dueAt: '2025-12-18T18:00:00.000Z'
+                done: false
+                createdAt: '2025-12-17T05:42:57.019Z'
+                updatedAt: '2025-12-17T05:42:57.019Z'
+    get:
+      summary: Get All Todos
+      responses:
+        '200':
+          description: Get All Todos Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '182'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"b6-q4nDNYk15ERUCo4U5KckodPNAfs"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:43:17 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    title:
+                      type: string
+                    description:
+                      type: string
+                    dueAt:
+                      type: string
+                      format: date-time
+                    done:
+                      type: boolean
+                    createdAt:
+                      type: string
+                      format: date-time
+                    updatedAt:
+                      type: string
+                      format: date-time
+              example:
+                - id: 1
+                  title: Buy milk
+                  description: 2L skimmed
+                  dueAt: '2025-12-18T18:00:00.000Z'
+                  done: false
+                  createdAt: '2025-12-17T05:42:57.019Z'
+                  updatedAt: '2025-12-17T05:42:57.019Z'
+  /todos/{todoId}:
+    get:
+      summary: Get Todo by ID
+      responses:
+        '200':
+          description: Get Todo by ID Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '180'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"b4-1kcB/iivDg+v8FQFywjszWAAdEw"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:43:44 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  dueAt:
+                    type: string
+                    format: date-time
+                  done:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    format: date-time
+                  updatedAt:
+                    type: string
+                    format: date-time
+              example:
+                id: 1
+                title: Buy milk
+                description: 2L skimmed
+                dueAt: '2025-12-18T18:00:00.000Z'
+                done: false
+                createdAt: '2025-12-17T05:42:57.019Z'
+                updatedAt: '2025-12-17T05:42:57.019Z'
+    parameters:
+      - name: todoId
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: '1'
+    put:
+      summary: Update Todo
+      responses:
+        '200':
+          description: Update Todo Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '209'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"d1-s5h/9cFKI/bPkPPK0WJu7PRPI8w"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:44:25 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  dueAt:
+                    type: string
+                    format: date-time
+                  done:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    format: date-time
+                  updatedAt:
+                    type: string
+                    format: date-time
+              example:
+                id: 1
+                title: Buy milk and bread
+                description: 2L skimmed, whole-grain bread
+                dueAt: '2025-12-18T19:00:00.000Z'
+                done: false
+                createdAt: '2025-12-17T05:42:57.019Z'
+                updatedAt: '2025-12-17T05:44:25.893Z'
+    delete:
+      summary: Delete Todo
+      responses:
+        '200':
+          description: Delete Todo Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '209'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"d1-s5h/9cFKI/bPkPPK0WJu7PRPI8w"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:44:41 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  dueAt:
+                    type: string
+                    format: date-time
+                  done:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    format: date-time
+                  updatedAt:
+                    type: string
+                    format: date-time
+              example:
+                id: 1
+                title: Buy milk and bread
+                description: 2L skimmed, whole-grain bread
+                dueAt: '2025-12-18T19:00:00.000Z'
+                done: false
+                createdAt: '2025-12-17T05:42:57.019Z'
+                updatedAt: '2025-12-17T05:44:25.893Z'
+  /todos/{todoId}/done:
+    post:
+      summary: Mark Todo as Done
+      responses:
+        '200':
+          description: Mark Todo as Done Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '179'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"b3-LWWg66gj3B6zH86xETZJ5B/e+0Q"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:46:09 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  dueAt:
+                    type: string
+                    format: date-time
+                  done:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    format: date-time
+                  updatedAt:
+                    type: string
+                    format: date-time
+              example:
+                id: 2
+                title: Buy milk
+                description: 2L skimmed
+                dueAt: '2025-12-18T18:00:00.000Z'
+                done: true
+                createdAt: '2025-12-17T05:45:32.493Z'
+                updatedAt: '2025-12-17T05:46:09.029Z'
+    parameters:
+      - name: todoId
+        in: path
+        required: true
+        schema:
+          type: integer
+        example: '1'
+  /todos-remaining:
+    get:
+      summary: Get Remaining Todos
+      responses:
+        '200':
+          description: Get Remaining Todos Success
+          headers:
+            X-Powered-By:
+              deprecated: false
+              schema: {}
+              example: Express
+            Access-Control-Allow-Origin:
+              deprecated: false
+              schema: {}
+              example: '*'
+            Content-Length:
+              deprecated: false
+              schema: {}
+              example: '181'
+            ETag:
+              deprecated: false
+              schema: {}
+              example: W/"b5-Mbeujwic+XoKOz6C8Pk40NgmqKE"
+            Date:
+              deprecated: false
+              schema: {}
+              example: Wed, 17 Dec 2025 05:46:29 GMT
+            Connection:
+              deprecated: false
+              schema: {}
+              example: keep-alive
+            Keep-Alive:
+              deprecated: false
+              schema: {}
+              example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    title:
+                      type: string
+                    description:
+                      type: string
+                    dueAt:
+                      type: string
+                      format: date-time
+                    done:
+                      type: boolean
+                    createdAt:
+                      type: string
+                      format: date-time
+                    updatedAt:
+                      type: string
+                      format: date-time
+              example:
+                - id: 3
+                  title: Buy bread
+                  description: 2Packets
+                  dueAt: '2025-12-19T18:00:00.000Z'
+                  done: false
+                  createdAt: '2025-12-17T05:45:55.314Z'
+                  updatedAt: '2025-12-17T05:45:55.314Z'
